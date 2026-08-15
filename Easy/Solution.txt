@@ -1,2 +1,7 @@
-SELECT name,population,area FROM World 
-WHERE area>=3000000 OR population>=25000000;
+SELECT 
+    p.product_name,
+    s.year,
+    s.price
+FROM Sales AS s
+INNER JOIN Product AS p
+    ON s.product_id = p.product_id;
