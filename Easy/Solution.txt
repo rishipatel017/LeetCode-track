@@ -1,7 +1,8 @@
 SELECT 
-    p.product_name,
-    s.year,
-    s.price
-FROM Sales AS s
-INNER JOIN Product AS p
-    ON s.product_id = p.product_id;
+    v.customer_id,
+    COUNT(*) AS count_no_trans
+FROM Visits v
+LEFT JOIN Transactions t
+    ON v.visit_id = t.visit_id
+WHERE t.transaction_id IS NULL
+GROUP BY v.customer_id;
