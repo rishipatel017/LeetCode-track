@@ -8,7 +8,7 @@ var once = function(fn) {
         if(called){
             return undefined;
         }
-        return called;
+        called;
     }
 };
 
