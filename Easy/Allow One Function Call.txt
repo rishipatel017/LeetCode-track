@@ -9,7 +9,7 @@ var once = function(fn) {
             return undefined;
         }
         called=true;
-        return fn(..args);
+        return fn(...args);
     }
 };
 
